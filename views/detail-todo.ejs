@@ -1,0 +1,13 @@
+<div class="card" style="width: 25rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= todo.title %> </h5>
+      <p class="card-text">Description : <%= todo.description %> </p>
+      <p class="card-text">Due date : <%= todo.due_date %> </p>
+      <p class="card-text">Status : <% if (todo.completed) { %>
+        <span class="badge bg-success">Completed</span>
+    <% } else { %>
+        <span class="badge bg-danger">Not Finished Yet</span>
+    <% } %> </p>
+      <a href="/todos" class="btn btn-primary">< Go back</a>
+    </div>
+  </div>
