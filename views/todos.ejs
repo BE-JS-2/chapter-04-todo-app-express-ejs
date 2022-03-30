@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    </style>
+<body>
+  <h1>Todos</h1>
+  <table>
+      <tr>
+          <td>Title</td>
+          <td>Completed</td>
+          <td>Edit</td>
+          <td>Delete</td>
+        </tr>
+    <% todos.forEach((value,index)=> { %>
+        <tr>
+            <td>
+                <a href="/todos/<%= value.id %>">
+                    <%= value.title %>
+                </a>
+            </td>
+          <td><%= value.completed%></td>
+          <td>
+            <form action="/todos/edit/<%= value.id %>?_method=PUT" method="PUT">
+            <input type="submit" value="Update">
+            </form>
+          </td>
+          <td>
+            <form action="/todos/delete/<%= value.id %>?_method=DELETE" method="DELETE">
+            <input type="submit" value="Delete">
+            </form>
+        </td>
+        </tr>
+    <% }) %>
+  </table>
+  <a href="/todos-add %>">Tambah</a>
+</body>
+</html>
