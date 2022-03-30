@@ -55,7 +55,8 @@ const deleteTodo = (todoID) => {
 };
 
 const generateID = () => {
-  return loadTodos().length + 1;
+  const todos = loadTodos();
+  return Number(todos[todos.length - 1].id) + 1;
 };
 
 module.exports = {
