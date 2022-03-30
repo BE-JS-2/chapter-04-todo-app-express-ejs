@@ -10,8 +10,8 @@ router.get("/add-data", todoController.getAddData);
 
 router.post("/todos", todoController.postAddData);
 
-router.post("/todos/update/:id", todoController.postUpdateTodos);
+router.put("/todos/:id", todoController.putUpdateTodo);
 
-router.post("/todos/delete/:id", todoController.postDeleteTodos);
+router.delete("/todos/:id", todoController.deleteTodo);
 
 module.exports = router;

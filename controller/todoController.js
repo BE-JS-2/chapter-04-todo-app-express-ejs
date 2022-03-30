@@ -44,7 +44,7 @@ exports.postAddData = (req, res, next) => {
     res.redirect("/todos");
 }
 
-exports.postUpdateTodos = (req, res, next) => {
+exports.putUpdateTodo = (req, res, next) => {
     const todoId = req.params.id;
     const todos = JSON.parse(fs.readFileSync("todos.json", "utf-8"));
     const indexTodo = todos.findIndex(todo => todo.id == todoId);
@@ -55,7 +55,7 @@ exports.postUpdateTodos = (req, res, next) => {
     res.redirect("/todos");
 }
 
-exports.postDeleteTodos = (req, res, next) => {
+exports.deleteTodo = (req, res, next) => {
     const todoId = req.params.id;
     const todos = JSON.parse(fs.readFileSync("todos.json", "utf-8"));
     const filterTodos = todos.filter(todo => todo.id != todoId);
