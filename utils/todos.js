@@ -54,6 +54,10 @@ const deleteTodo = (todoID) => {
   saveTodos(newTodos);
 };
 
+const generateID = () => {
+  return loadTodos().length + 1;
+};
+
 module.exports = {
   loadTodos,
   detailTodoByID,
@@ -61,4 +65,5 @@ module.exports = {
   isDuplicate,
   setCompleted,
   deleteTodo,
+  generateID,
 };

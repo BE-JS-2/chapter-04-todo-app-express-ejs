@@ -7,6 +7,7 @@ const {
   isDuplicate,
   setCompleted,
   deleteTodo,
+  generateID,
 } = require("../utils/todos");
 const { body, validationResult, check } = require("express-validator");
 
@@ -52,9 +53,11 @@ router.post(
 );
 
 router.get("/add", (req, res, next) => {
+  const generatedID = generateID();
   res.render("todos-add", {
     layout: "layouts/dashboard",
     title: "Add Todo",
+    generatedID,
   });
 });
 

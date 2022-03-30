@@ -4,13 +4,7 @@ const { loadTodos } = require("../utils/todos");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  const todos = loadTodos();
-  res.render("todos", {
-    layout: "layouts/dashboard",
-    title: "Todo List",
-    todos,
-    msg: req.flash("msg"),
-  });
+  res.redirect("/todos");
 });
 
 module.exports = router;
