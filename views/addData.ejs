@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageTitle %>
+    </title>
+</head>
+
+<body>
+    <center>
+        <form action="/todos" method="POST">
+            <label for="userId">User Id :</label><br>
+            <input type="text" id="userId" name="userId"><br>
+            <label for="id">Id :</label><br>
+            <input type="text" id="id" name="id"><br>
+            <label for="title">Title :</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label for="description">Description :</label><br>
+            <input type="text" id="description" name="description"><br>
+            <label for="due_date">Due Date :</label><br>
+            <input type="date" id="due_date" name="due_date"><br>
+            <label for="completed">Completed :</label><br>
+            <input type="text" id="completed" name="completed"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </center>
+</body>
+
+</html>

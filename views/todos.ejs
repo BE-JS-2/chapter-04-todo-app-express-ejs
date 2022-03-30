@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageTitle %>
+    </title>
+</head>
+<style>
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <center>
+
+        <h1>List Todo</h1>
+        <table>
+            <% if(todos.length > 0) { %>
+                <tr>
+                    <th>Title</th>
+                    <th>Completed</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                <% } %>
+                    <% for (let i = 0; i < todos.length; i++){ %>
+                        <tr>
+                            <td>
+                                <a href="/todos/<%= todos[i].id %>">
+                                    <%= todos[i].title %>
+                                </a>
+                            </td>
+                            <td>
+                                <%= todos[i].completed %>
+                            </td>
+                            <td>
+                                <form action="/todos/update/<%= todos[i].id %>" method="POST">
+                                    <input type="submit" value="Update">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/todos/delete/<%= todos[i].id %>" method="POST">
+                                    <input type="submit" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                        <% } %>
+        </table>
+        <br>
+        <a href="/add-data">Add Data</a>
+    </center>
+
+</body>
+
+</html>
