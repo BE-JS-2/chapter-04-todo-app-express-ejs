@@ -1,0 +1,25 @@
+<%- include('./includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/form.css">
+  </head>
+  <body>
+    <main>
+      <form class="todos-form" action="/todos" method="POST">
+        <a class="btn" href="/todos">Back</a>
+        <h1>Add new todo ✍️</h1>
+        <div class="form-control">
+          <label for="">Title</label>
+          <input type="text" name="title" id="title" />
+        </div>
+        <div class="form-control">
+          <label for="description">Description</label>
+          <input type="text" name="description" id="description" />
+        </div>
+        <div class="form-control">
+          <label for="due_date">Due Date</label>
+          <input type="date" name="due_date" id="due_date" />
+        </div>
+
+        <button class="btn" type="submit">Add Todo</button>
+      </form>
+<%- include('./includes/end.ejs') %>

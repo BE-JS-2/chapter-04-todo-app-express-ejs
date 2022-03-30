@@ -1,0 +1,48 @@
+<%- include('./includes/head.ejs') %>
+  <link rel="stylesheet" href="/css/main.css" />
+</head> 
+  <body>
+    <main>
+      <a class="btn" href="/todos">Back</a>
+      <h1>📝 Detail todo of #<%= todo.title %></h1>
+
+      <ul class="card" style="list-style: none;">
+        <div class="card__content">
+          <li style="float: right;">
+            <b>📅 Due Date:</b>
+            <%= todo.due_date %>
+          </li>
+          <br>
+          <br>
+          <li>
+            <b>User ID:</b> 
+            <%= todo.userId %>
+          </li>
+          <li>
+            <b>ID:</b> 
+            <%= todo.id %>
+          </li>
+          <li>
+            <b>Title:</b>
+            <%= todo.title %>
+          </li>
+          <li>
+            <b>Description:</b>
+            <p>
+              <%= todo.description %>
+            </p>
+          </li>   
+          <li>
+            <b>Status:</b>
+            <% if(todo.completed) { %> 
+              Completed ✅
+              <% } else { %>
+                <form action="/todos/<%= todo.id %>" method="POST">
+                Not Completed ❌
+                <input class="btn" type="submit" value="Change" />
+              <% } %>
+            </form>
+          </li>
+        </div>
+      </ul>
+<%- include('./includes/end.ejs') %>
