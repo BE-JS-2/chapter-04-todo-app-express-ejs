@@ -26,7 +26,6 @@ exports.getAddData = (req, res, next) => {
 
 exports.postAddData = (req, res, next) => {
     const userId = req.body.userId;
-    const id = req.body.id;
     const title = req.body.title;
     const description = req.body.description;
     const due_date = req.body.due_date;
@@ -34,7 +33,7 @@ exports.postAddData = (req, res, next) => {
     const todos = JSON.parse(fs.readFileSync("todos.json", "utf-8"));
     todos.push({
         userId: userId,
-        id: id,
+        id: todos.length + 1,
         title: title,
         description: description,
         due_date: due_date,
