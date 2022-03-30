@@ -1,0 +1,26 @@
+[
+    {
+        "userID": "1",
+        "id": "1",
+        "title": "Tes TOEFL",
+        "description": "lokasi tes di palembang",
+        "due_date": "2022-03-31",
+        "completed": false
+    },
+    {
+        "userID": "1",
+        "id": "2",
+        "title": "Belajar EJS",
+        "description": "Express punya template engine",
+        "due_date": "2022-03-29",
+        "completed": true
+    },
+    {
+        "userID": "1",
+        "id": "3",
+        "title": "Ngoding bareng",
+        "description": "Gas",
+        "due_date": "2022-03-08",
+        "completed": false
+    }
+]

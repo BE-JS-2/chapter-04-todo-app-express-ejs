@@ -1,0 +1,27 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- DataTales Example -->
+    <a href="/todos" class="btn btn-primary mb-3">Back to Todo List</a>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary"><%= title %> </h6>
+        </div>
+        <div class="card-body border-left-primary">
+
+            <% if (!todo) { %>
+            <h1 class="h3 mb-4 text-gray-800">
+                Todo not found, invalid id todo.
+            </h1>
+
+            <% } else { %>
+
+            <h1 class="h3 mb-4 text-gray-800"><%= todo.title %> </h1>
+            <h5 class="card-title"><%= todo.description %></h5>
+            <h5 class="card-title"><%= todo.due_date %></h5>
+            <% } %>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->

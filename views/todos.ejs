@@ -1,0 +1,67 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <% if (msg.length != 0) { %>
+    <div class="alert alert-success fw-bold" role="alert">
+        <%= msg %>
+    </div>
+    <% } %>
+    <!-- DataTales Example -->
+    <a href="/todos/add" class="btn btn-primary mb-3">Add Todo</a>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary"><%= title %> </h6>
+        </div>
+        <div class="card-body border-left-primary">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Checklist</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Checklist</th>
+                            <th>Action</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <% todos.forEach((element,index) => { %>
+                        <tr>
+                            <td><%= ++index %> </td>
+                            <td><%= element.title %> </td>
+                            <td><%= element.completed %></td>
+                            <td>
+                                <% if (element.completed === false) { %>
+                                <a href="/todos/edit/<%= element.id %> " class="btn btn-warning badge rounded-pill"><i
+                                        class="bi bi-check">Set Complete</i>
+                                </a>
+                                <% } %>
+                            </td>
+                            <td>
+                                <a href="/todos/<%= element.id %> " class="btn btn-success badge rounded-pill"><i
+                                        class="bi bi-info-circle"></i>
+                                    Detail</a>
+                                <a href="/todos/delete/<%= element.id %> " class="btn btn-danger badge rounded-pill"><i
+                                        class="bi bi-trash"></i>
+                                    Delete</a>
+
+                            </td>
+
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
