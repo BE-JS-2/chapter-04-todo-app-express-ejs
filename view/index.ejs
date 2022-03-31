@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/bulma.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Todo App</title>
+</head>
+<body>
+  <div class="container">
+    <form action="/todos" method="post" class="mb-5">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input" name="title" type="text" placeholder="Enter a title">
+        </div>
+        <div class="control">
+          <input class="input" name="description" type="text" placeholder="Enter a description">
+        </div>
+        <div class="control">
+          <input class="input" name="due_date" type="date" placeholder="Enter a description">
+        </div>
+        <div class="control">
+          <button class="button is-primary" type="submit">Add Todo</button>
+        </div>
+      </div>
+    </form>
+    <div class="box">
+     <% data.forEach((d, i) => { %>
+      <div class="columns">
+        <div class="column is-1">
+          <%= i+1 %> 
+        </div>
+        <div class="column is-9">
+          <% if (d.completed) { %>
+            <a href="todos/<%= d.id %>" style="text-decoration: line-through;"><%= d.title %></a> 
+          <% } else {%>
+            <a href="todos/<%= d.id %>"><%= d.title %></a> 
+          <% }%>
+        </div>
+        <div class="column">
+          <a href="todos/delete/<%= d.id %>" class="tag is-danger">delete</a>
+          <a href="todos/edit/<%= d.id %>" class="tag is-link">edit</a>
+        </div>
+      </div>
+     <% }) %>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

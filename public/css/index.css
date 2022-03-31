@@ -1,0 +1,11 @@
+.container {
+  margin-top: 50px;
+}
+
+.container .buttons {
+  margin-bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+}

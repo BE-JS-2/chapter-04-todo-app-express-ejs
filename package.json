@@ -1,0 +1,12 @@
+{
+  "name": "chapter-04-todo-app-express-ejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://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@github.com/BE-JS-2/chapter-04-todo-app-express-ejs.git",
+  "author": "didik2706 <didikhidayat27@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}

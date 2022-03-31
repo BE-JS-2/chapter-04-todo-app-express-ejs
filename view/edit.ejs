@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/bulma.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Edit | Todo</title>
+</head>
+<body>
+  <div class="container">
+    <h2 class="title is-2">Edit Todo</h2>
+    <div class="box">
+      <form action="/todos/<%= data[0].id %>" method="post">
+        <input type="hidden" name="id" value="<%= data[0].id %>">
+        <div class="field">
+          <label class="label">Title</label>
+          <div class="control">
+            <input class="input" type="text" name="title" value="<%= data[0].title %>" placeholder="Enter Title">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Description</label>
+          <div class="control">
+            <input class="input" type="text" name="description" value="<%= data[0].description %>" placeholder="Enter Description">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">complate ?</label>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="completed" value="true" <%= (data[0].completed) ? 'checked' : '' %> name="foobar">
+              Completed
+            </label>
+            <label class="radio">
+              <input type="radio" name="completed" value="false" <%= (!data[0].completed) ? 'checked' : '' %> name="foobar" >
+              Uncompleted
+            </label>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <p class="control">
+            <button class="button is-info">Submit</button>
+          </p>
+          <p class="control">
+            <a class="button is-light" href="/todos">
+              Cancel
+            </a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

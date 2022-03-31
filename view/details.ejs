@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/bulma.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <title>Details | Todo</title>
+</head>
+<body>
+  <div class="container">
+    <h2 class="title is-2">Details Todo</h2>
+    <div class="box">
+      <p class="title is-4"><%= data[0].title %> </p>
+      <p class="subtitle"><%= data[0].description %> </p><br>
+      <div class="columns">
+        <div class="column">
+          <div class="tags has-addons">
+            <span class="tag"><%= data[0].due_date %></span>
+            <% if (data[0].completed) { %>
+              <span class="tag is-success">completed</span>
+              <% } else {%>
+                <span class="tag is-danger">uncompleted</span>
+            <% }  %>
+          </div>
+          <a href="/todos" class="tag is-warning">back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
