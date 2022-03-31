@@ -1,0 +1,25 @@
+{
+  "name": "chapter-04-todo-app-express-ejs",
+  "version": "1.0.0",
+  "description": "- Mengerti cara membuat web sederhana menggunakan express dan ejs\r ## Directions\r Buatlah sebuah web sederhana menggunakan express sebagai framework dan ejs sebagai view engine dengan routingan sebagai berikut:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BE-JS-2/chapter-04-todo-app-express-ejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BE-JS-2/chapter-04-todo-app-express-ejs/issues"
+  },
+  "homepage": "https://github.com/BE-JS-2/chapter-04-todo-app-express-ejs#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
