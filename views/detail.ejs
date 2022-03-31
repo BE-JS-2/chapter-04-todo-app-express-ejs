@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>TODOS</h1>
+  <table cellpadding="0" cellspacing="0" border="2">
+    <tr>
+      <td>id</td>
+      <td>title</td>
+      <td>description</td>
+      <td>due_date</td>
+      <td>completed</td>
+    </tr>
+    <tr>
+      <td><%= todos.id%></td>
+      <td><%= todos.title%></td>
+      <td><%= todos.description%></td>
+      <td><%= todos.due_date%></td>
+      <td><%= todos.completed%> <br>
+      </td>
+    </tr>
+  </table>
+
+  <form action="/todos/ " style="float: right;" method="get">
+    <button type="submit">back</button>
+  </form>
+</body>
+
+</html>

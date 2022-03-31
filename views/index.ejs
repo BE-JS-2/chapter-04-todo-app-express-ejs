@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>TODOS</h1>
+  <form action="/todos/add " method="get">
+    <button type="submit">Add Todos</button>
+  </form>
+  <div>
+    <table>
+      <tr>
+        <td>title</td>
+        <td>completed</td>
+        <td colspan="2">action</td>
+      </tr>
+  </div>
+  <div>
+    <% for (let i = 0; i < todos.length; i++) { %>
+    <tr>
+      <td><a href="/todos/<%= todos[i].id%>"><%=todos[i].title%></a></td>
+      <td><%=todos[i].completed%></td>
+      <td>
+        <form action="/todos/edit/<%= todos[i].id%> " method="get">
+          <button type="submit">Change True</button>
+        </form>
+      </td>
+      <td>
+        <form action="/todos/delete/<%= todos[i].id%>" method="post">
+          <button type="submit">delete</button>
+        </form>
+      </td>
+    </tr>
+    <% } %>
+  </div>
+  </table>
+  <br>
+  </div>
+</body>
+
+</html>
