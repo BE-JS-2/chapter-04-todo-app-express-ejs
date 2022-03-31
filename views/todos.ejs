@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+          margin: 0 20px;
+        }
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        h1 {
+            text-align: center;
+        }
+        a{
+          text-decoration: none;
+        }
+        button {
+            background-color: #45a049;
+            margin-top: 1rem;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button a, [type=submit]{
+            color: white;
+            text-decoration: none;
+        }
+        </style>
+</head>
+<body>
+    <h1>Sample Todos</h1>
+    <table>
+        <tr>
+          <th>Title</th>
+          <th>Completed</th>
+          <th>Action</th>
+        </tr>
+        <% for (let i = 0; i < list.length; i++) { %>
+            <tr>
+                <td><a href="/todos/<%= list[i].id %>"><%=list[i].title%></a></td>
+                <td><%=list[i].completed%></td>
+                <td>
+                  <form action="/todos-delete/<%= list[i].id %> " method="post">
+                    <button type="submit">Delete</button>
+                  </form>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+    <button><a href="/add">Add Data</a>
+    
+    </button>
+
+</body>
+</html>

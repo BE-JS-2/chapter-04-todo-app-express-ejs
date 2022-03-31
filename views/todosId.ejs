@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        body{
+            margin: 26px;
+        }
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+          width: 50px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            background-color: #45a049;
+            margin-top: 1rem;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        button a, [type=submit]{
+            color: white;
+            text-decoration: none;
+        }
+        </style>
+</head>
+<body>
+    <h1>Detail</h1>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Due Date</th>
+        <th>Completed</th>
+      </tr>
+      <tr>
+        <td><%= list.title%></td> 
+        <td><%= list.description%></td>
+        <td><%= list.due_date%></td>
+        <td><%= list.completed%>
+            <form action="/todos-edit/<%= list.id %> " method="get">
+                <button type="submit">Change True</button>
+            </form>
+        </td>
+      </tr>
+    </table>
+
+    <button><a href="/todos">Back</a>
+</body>
+</html>
