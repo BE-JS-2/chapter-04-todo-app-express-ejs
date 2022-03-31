@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <title>Simple Sign up from</title>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 15px;
+      }
+      form {
+      border: 5px solid #f1f1f1;
+      }
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      }
+      textarea {
+      width: 100%;
+      padding: 16px 8px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      resize: none;
+      }
+
+      button {
+      background-color: #059200;
+      color: white;
+      padding: 14px 0;
+      margin: 10px 0;
+      border: none;
+      cursor: grab;
+      width: 48%;
+      }
+      h1 {
+      text-align:center;
+      font-size:18;
+      }
+      button:hover {
+      opacity: 0.8;
+      }
+      .formcontainer {
+      text-align: center;
+      margin: 24px 50px 12px;
+      }
+      .container {
+      padding: 16px 0;
+      text-align:left;
+      }
+
+      /* Change styles for span on extra small screens */
+      
+    </style>
+  </head>
+  <body>
+    <form action="/update_todo/<%= todo.id%>" method="post">
+      <h1>Todo Detail</h1>
+      <div class="formcontainer">
+      <div class="container">
+        <input type="hidden" name="userId" value="<%= todo.userId%>" readonly>
+        <input type="hidden" name="id" value="<%= todo.id%>" readonly>
+        <label for="uname"><strong>Title</strong></label>
+        <input type="text"  name="title" readonly value="<%= todo.title%>">
+        <label for="mail"><strong>Description</strong></label>
+        <textarea type="text" cols="5" name="description" readonly ><%= todo.description%></textarea>
+        <label for="psw"><strong>Date</strong></label>
+        <input type="date"  name="due_date" readonly value="<%= todo.due_date%>"><br><br>
+        <label for="psw"><strong>Status</strong></label>
+        <% if (todo.completed) {%>
+            <input type="text"  name="psw" readonly value="Selesai">
+        <% } else { %>
+            <input type="text"  name="psw" readonly value="Belum">
+        <% } %>
+      </div>
+      <button type="submit"><strong>Selesai</strong></button>
+    </form>
+    <form style="border: none;" action="/delete_todo/<%= todo.id%>" method="post">
+        <input type="hidden" name="userId" value="<%= todo.userId%>" readonly>
+        <input type="hidden" name="id" value="<%= todo.id%>" readonly>
+        <input type="hidden"  name="title" readonly value="<%= todo.title%>">
+        <input type="hidden" name="description" readonly value="<%= todo.description%>">
+        <input type="hidden"  name="due_date" readonly value="<%= todo.due_date%>"><br><br>
+        <% if (todo.completed) {%>
+              <input type="hidden"  name="psw" readonly value="Selesai">
+        <% } else { %>
+           <input type="hidden"  name="psw" readonly value="Belum">
+        <% } %>
+            <button style="background-color: rgb(255, 117, 117);" type="submit"><strong>Hapus</strong></button>
+      </form>
+  </body>
+</html>

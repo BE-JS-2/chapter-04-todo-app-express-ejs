@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #5a7233;
+        }
+        h1 {
+            font-weight: 400;
+            color: #fff;
+        }
+        .item {
+            padding: 30px 30px 30px 30px;
+            margin: 30px 20px 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            background: rgba( 255, 255, 255, 0.3 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 9px );
+            -webkit-backdrop-filter: blur( 9px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );  
+        }
+
+/* CSS */
+        .add{
+        align-items: center;
+        appearance: none;
+        background-color: #fff;
+        border-radius: 24px;
+        border-style: none;
+        box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+        box-sizing: border-box;
+        color: #3c4043;
+        cursor: pointer;
+        display: inline-flex;
+        fill: currentcolor;
+        font-family: "Google Sans",Roboto,Arial,sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        height: 48px;
+        justify-content: center;
+        letter-spacing: .25px;
+        line-height: normal;
+        max-width: 100%;
+        overflow: visible;
+        padding: 2px 24px;
+        position: relative;
+        text-align: center;
+        text-transform: none;
+        transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: auto;
+        will-change: transform,opacity;
+        z-index: 0;
+        }
+
+        .add:hover {
+        background: #F6F9FE;
+        color: #174ea6;
+        }
+
+        .add:active {
+        box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+        outline: none;
+        }
+
+        .add:focus {
+        outline: none;
+        border: 2px solid #4285f4;
+        }
+
+        .add:not(:disabled) {
+        box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .add:not(:disabled):hover {
+        box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+        }
+
+        .add:not(:disabled):focus {
+        box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .add:not(:disabled):active {
+        box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+        }
+
+        .add:disabled {
+        box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between;">
+        <h1>Todo list</h1>
+        <div class="add"><a href="/add_todo">Tambah</a></div>
+    </div>
+    <div>
+        <% for (const todo of todos) {%>
+            <div class="item">
+                <a style="text-decoration: none; font-weight: bold; color: #fff; font-size: 18pt;" 
+                href="/todos/<%= todo.id%>"><%= todo.title %></a>
+                <% if (todo.completed) {%>
+                    <div style="padding: 15px; background-color: green; color: white; border-radius: 50%;">Selesai</div>
+                <% } else { %>
+                    <div style="padding: 15px; background-color: red; color: white; border-radius: 50%;">Belum</div>
+                <% } %>
+                </div>
+        <% } %>
+        </div>
+</body>
+</html>
